@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="jars" name="Create Runnable JARs for Project jFuzzyLogic">
 
+	<property name="version" value="1.0" />
+	
 	<target name="jars"  depends="clean,compile,create_jar,create_core_jar">
 	</target>
 	
     <target name="create_jar" depends="compile">
-        <jar destfile="${user.home}/jFuzzyLogic.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="${user.home}/jFuzzyLogic-${version}.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="net.sourceforge.jFuzzyLogic.JFuzzyLogic"/>
                 <attribute name="Class-Path" value="."/>
@@ -20,7 +22,7 @@
     </target>
 
     <target name="create_core_jar" depends="compile">
-        <jar destfile="${user.home}/jFuzzyLogic_core.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="${user.home}/jFuzzyLogic_core-${version}.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="net.sourceforge.jFuzzyLogic.JFuzzyLogic"/>
                 <attribute name="Class-Path" value="."/>
@@ -33,8 +35,8 @@
 
     <target name="clean" description="Delete all generated files">
         <delete dir="bin/net"/>
-        <delete file="${user.home}/jFuzzyLogic.jar"/>
-        <delete file="${user.home}/jFuzzyLogic_core.jar"/>
+        <delete file="${user.home}/jFuzzyLogic-${version}.jar"/>
+        <delete file="${user.home}/jFuzzyLogic_core-${version}.jar"/>
     </target>
 
     <target name="compile">

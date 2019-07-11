@@ -70,6 +70,6 @@ public class MembershipFunctionGenBell extends MembershipFunctionContinuous {
 	/** FCL representation */
 	@Override
 	public String toStringFcl() {
-		return "GBELL " + parameters[0] + " " + parameters[1] + " " + parameters[2];
+		return "GBELL " + parameters[1] + " " + parameters[2] + " " + parameters[0];
 	}
 }
